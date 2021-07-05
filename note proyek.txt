@@ -14,9 +14,15 @@ https://www.domainesia.com/pesan&q=hosting&paket=super&siklus=12/
 create DB & use MVC (CI/laravel 8), edit template (login form, hal admin), hosting
 
 jobdesk:
-1. fanny -> CRUD, base awal, ux
+1. fanny -> framework, base awal, ux
 2. rey -> template
 3. toni -> template
+
+edit template:
+nav -> home, product, about (about us, team, testimonials), contact
+toni : about
+rey : product, contact
+fanny : home
 
 ref -> https://montir.id/, https://supercar.id/, https://www.go-mekanik.com/
 
