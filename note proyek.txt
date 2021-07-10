@@ -1,17 +1,29 @@
 studi kasus = umkm mikro bengkel -> vincent motor
 bidang otomotif
 jenis user = user biasa, admin
-table -> barang
-	 user
-	 kategori
-	 order
+db table:
+member ->
+id_member, nama_member, username, email, password
+
+supplier ->
+id_supplier, nama_supplier, kota_supplier, alamat_supplier
+
+barang ->
+id_barang, nama_barang, merk_barang, harga_barang, stok_barang, kategori_barang
+
+pembelian ->
+id_beli, id_barang, id_supplier, tgl_beli, jml_beli
+
+penjualan ->
+id_jual, id_barang, id_member, tgl_jual, jml_jual
+
 hosting -> niagahoster = personal Rp.26.813
 template :
 https://www.phpjabbers.com/free-car-dealer-website-template-109.php
 hosting :
 https://www.domainesia.com/pesan&q=hosting&paket=super&siklus=12/
 
-create DB & use MVC (CI/laravel 8), edit template (login form, hal admin), hosting
+create DB & use MVC (laravel 8), edit template (login form, hal admin), hosting
 
 jobdesk:
 1. fanny -> framework, base awal, ux
