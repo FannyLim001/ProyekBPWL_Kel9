@@ -21,9 +21,7 @@ Route::get('/produk', function () {
     return view('v_product');
 });
 
-Route::get('/detail_produk', function () {
-    return view('v_detail_product');
-});
+Route::get('/detail_produk', 'DetailProdukController@index');
 
 Route::get('/tentang', function () {
     return view('v_about');

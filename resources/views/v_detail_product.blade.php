@@ -138,74 +138,23 @@
 
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <label>Type</label>
+                                    <label>Nama Produk</label>
 
                                     <p>Used vehicle</p>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <label>Make</label>
+                                    <label>Merek</label>
 
                                     <p>Lorem ipsum dolor sit</p>
                                 </div>
-
                                 <div class="col-sm-6">
-                                    <label> Model</label>
+                                    <label>Stok Produk</label>
 
-                                    <p>Lorem ipsum dolor sit</p>
+                                    <p>Black</p>
                                 </div>
-
                                 <div class="col-sm-6">
-                                    <label>First registration</label>
-
-                                    <p>05/2010</p>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label>Mileage</label>
-
-                                    <p>5000 km</p>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label>Fuel</label>
-
-                                    <p>Diesel</p>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label>Engine size</label>
-
-                                    <p>1800 cc</p>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label>Power</label>
-
-                                    <p>85 hp</p>
-                                </div>
-
-
-                                <div class="col-sm-6">
-                                    <label>Gearbox</label>
-
-                                    <p>Manual</p>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label>Number of seats</label>
-
-                                    <p>4</p>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label>Doors</label>
-
-                                    <p>2/3</p>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <label>Color</label>
+                                    <label>Kategori Produk</label>
 
                                     <p>Black</p>
                                 </div>
@@ -213,8 +162,11 @@
                         </article>
                         <article id='tabs-2'>
                             <h4>Deskripsi Produk</h4>
-
-                            <p>- Colour coded bumpers <br> - Tinted glass <br> - Immobiliser <br> - Central locking - remote <br> - Passenger airbag <br> - Electric windows <br> - Rear head rests <br> - Radio <br> - CD player <br> - Ideal first car <br> - Warranty <br> - High level brake light <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>
+                                @foreach($barang as $b)
+                                {{$b->deskripsi_barang}}
+                                @endforeach
+                            </p>
                         </article>
                     </section>
                 </div>
