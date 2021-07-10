@@ -47,18 +47,18 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="/" class="active">Beranda</a></li>
-                            <li><a href="product">Produk</a></li>
+                            <li><a href="produk">Produk</a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tentang</a>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about">Tentang Kami</a>
-                                    <a class="dropdown-item" href="team">Tim</a>
-                                    <a class="dropdown-item" href="testimonials">Testimoni</a>
+                                    <a class="dropdown-item" href="tentang">Tentang Kami</a>
+                                    <a class="dropdown-item" href="tim">Tim</a>
+                                    <a class="dropdown-item" href="testimoni">Testimoni</a>
                                 </div>
                             </li>
-                            <li><a href="contact">Kontak</a></li>
-                            <li><a href="login">Masuk</a></li>
+                            <li><a href="kontak">Kontak</a></li>
+                            <li><a href="masuk">Masuk</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

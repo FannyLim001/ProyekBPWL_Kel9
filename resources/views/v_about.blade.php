@@ -11,11 +11,11 @@
 
     <title>Tentang kami</title>
 
-    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/user/assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/user/assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="{{asset('template')}}/assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('template')}}/user/assets/css/style.css">
 
 </head>
 
@@ -47,18 +47,18 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="/">Beranda</a></li>
-                            <li><a href="product">Produk</a></li>
+                            <li><a href="produk">Produk</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tentang</a>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item active" href="about">Tentang kami</a>
-                                    <a class="dropdown-item" href="team">Tim</a>
-                                    <a class="dropdown-item" href="testimonials">Testimoni</a>
+                                    <a class="dropdown-item active" href="tentang">Tentang kami</a>
+                                    <a class="dropdown-item" href="tim">Tim</a>
+                                    <a class="dropdown-item" href="testimoni">Testimoni</a>
                                 </div>
                             </li>
-                            <li><a href="contact">Kontak</a></li>
-                            <li><a href="login">Masuk</a></li>
+                            <li><a href="kontak">Kontak</a></li>
+                            <li><a href="masuk">Masuk</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -71,7 +71,7 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <section class="section section-bg" id="call-to-action" style="background-image: url(template/assets/images/brochures.jpg)">
+    <section class="section section-bg" id="call-to-action" style="background-image: url(template/user/assets/images/brochures.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
@@ -102,7 +102,7 @@
                     <section class='tabs-content'>
 
                         <article id='tabs-2'>
-                            <img src="{{asset('template')}}/assets/images/about-image-2-940x460.jpg" alt="">
+                            <img src="{{asset('template')}}/user/assets/images/about-image-2-940x460.jpg" alt="">
                             <h4>Pekerjaan Kami</h4>
                             <h5>Menyediakan jasa servis motor berkualitas</h5>
                             <p>Untuk mendapatkan layanan servis kendaraan, maka anda dapat langsung menghubungi kami pada halaman kontak dan memesan
@@ -119,7 +119,7 @@
     <!-- ***** Our Classes End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
-    <section class="section section-bg" id="call-to-action" style="background-image: url(template/assets/images/brochures.jpg)">
+    <section class="section section-bg" id="call-to-action" style="background-image: url(template/user/assets/images/brochures.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
@@ -151,22 +151,22 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="{{asset('template')}}/assets/js/jquery-2.1.0.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="{{asset('template')}}/assets/js/popper.js"></script>
-    <script src="{{asset('template')}}/assets/js/bootstrap.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/popper.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
-    <script src="{{asset('template')}}/assets/js/scrollreveal.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/waypoints.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/jquery.counterup.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/imgfix.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/mixitup.js"></script>
-    <script src="{{asset('template')}}/assets/js/accordions.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/scrollreveal.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/waypoints.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/jquery.counterup.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/imgfix.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/mixitup.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/accordions.js"></script>
 
     <!-- Global Init -->
-    <script src="{{asset('template')}}/assets/js/custom.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/custom.js"></script>
 
 </body>
 

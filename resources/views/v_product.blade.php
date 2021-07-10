@@ -11,11 +11,11 @@
 
     <title>Produk</title>
 
-    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/user/assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('template')}}/user/assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="{{asset('template')}}/assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('template')}}/user/assets/css/style.css">
 
 </head>
 
@@ -71,7 +71,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
-    <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
+    <section class="section section-bg" id="call-to-action" style="background-image: url(template/user/assets/images/brochures.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
@@ -217,7 +217,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="{{asset('template')}}/assets/images/product-1-720x480.jpg" alt="">
+                            <img src="{{asset('template')}}/user/assets/images/product-1-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -241,7 +241,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="{{asset('template')}}/assets/images/product-2-720x480.jpg" alt="">
+                            <img src="{{asset('template')}}/user/assets/images/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -265,7 +265,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="{{asset('template')}}/assets/images/product-3-720x480.jpg" alt="">
+                            <img src="{{asset('template')}}/user/assets/images/product-3-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -290,7 +290,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="{{asset('template')}}/assets/images/product-4-720x480.jpg" alt="">
+                            <img src="{{asset('template')}}/user/assets/images/product-4-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -314,7 +314,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="{{asset('template')}}/{{asset('template')}}/assets/images/product-5-720x480.jpg" alt="">
+                            <img src="{{asset('template')}}/user/assets/images/product-5-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -338,7 +338,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="{{asset('template')}}/assets/images/product-6-720x480.jpg" alt="">
+                            <img src="{{asset('template')}}/user/assets/images/product-6-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -403,22 +403,22 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="{{asset('template')}}/assets/js/jquery-2.1.0.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="{{asset('template')}}/assets/js/popper.js"></script>
-    <script src="{{asset('template')}}/assets/js/bootstrap.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/popper.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
-    <script src="{{asset('template')}}/assets/js/scrollreveal.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/waypoints.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/jquery.counterup.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/imgfix.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/mixitup.js"></script>
-    <script src="{{asset('template')}}/assets/js/accordions.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/scrollreveal.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/waypoints.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/jquery.counterup.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/imgfix.min.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/mixitup.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/accordions.js"></script>
 
     <!-- Global Init -->
-    <script src="{{asset('template')}}/assets/js/custom.js"></script>
+    <script src="{{asset('template')}}/user/assets/js/custom.js"></script>
 
 </body>
 
