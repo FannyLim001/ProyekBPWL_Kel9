@@ -22,7 +22,7 @@ Route::get('/produk', function () {
 });
 
 Route::get('/detail_produk', function () {
-    return view('v_product');
+    return view('v_detail_product');
 });
 
 Route::get('/tentang', function () {
@@ -47,4 +47,8 @@ Route::get('/masuk', function () {
 
 Route::get('/daftar', function () {
     return view('v_register');
+});
+
+Route::get('/dashboard', function () {
+    return view('v_dashboard');
 });
