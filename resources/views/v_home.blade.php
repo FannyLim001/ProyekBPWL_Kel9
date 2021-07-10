@@ -82,7 +82,7 @@
                 <h6>Selamat datang di</h6>
                 <h2>Servis <em>Bengkel</em> Andalanmu!</h2>
                 <div class="main-button">
-                    <a href="contact.html">Kontak kami</a>
+                    <a href="kontak">Kontak kami</a>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                     <div class="section-heading">
                         <h2>Produk <em>kami</em></h2>
                         <img src="{{asset('template')}}/user/assets/images/line-dec.png" alt="">
-                        <p>Selain melakukan servis kendaraan motor, kami juga menyediakan produk sparepart dan pendukung motor seperti oli, dsb</p>
+                        <p>Selain melakukan servis kendaraan motor, kami juga menyediakan produk sparepart dan pendukung motor seperti oli, ban, dan banyak lainnya</p>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="car-details.html">+ Lihat Produk</a></li>
+                                <li><a href="detail_produk">+ Lihat Produk</a></li>
                             </ul>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="car-details.html">+ Lihat Produk</a></li>
+                                <li><a href="detail_produk">+ Lihat Produk</a></li>
                             </ul>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="car-details.html">+ Lihat Produk</a></li>
+                                <li><a href="detail_produk">+ Lihat Produk</a></li>
                             </ul>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
             <br>
 
             <div class="main-button text-center">
-                <a href="Product.html">Lihat Produk</a>
+                <a href="produk">Lihat Produk</a>
             </div>
         </div>
     </section>
@@ -192,7 +192,7 @@
                     <div class="section-heading dark-bg">
                         <h2>Tentang <em>Kami</em></h2>
                         <img src="assets/images/line-dec.png" alt="">
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
+                        <p>Kami menyediakan jasa servis motor dan produk kendaraan motor berkualitas yang mendukung kebutuhan anda</p>
                     </div>
                 </div>
             </div>
@@ -206,7 +206,7 @@
                     <div class="section-heading">
                         <h2><em>Testimoni</em> toko kami</h2>
                         <img src="{{asset('template')}}/user/assets/images/line-dec.png" alt="waves">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem incidunt alias minima tenetur nemo necessitatibus?</p>
+                        <p>Berikut ialah testimoni dari pelanggan kami yang sudah menggunakan layanan dan membeli produk dari vincent motor</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -216,8 +216,8 @@
                                 <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="First One">
                             </div>
                             <div class="right-content">
-                                <h4>John Doe</h4>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                                <h4>Ratna</h4>
+                                <p><em>"Pelayanan Vincent Motor itu sangat profesional dan memuaskan. Mekanik langsung dari bengkel resmi dan kita dapat konsultasi dengan gratis."</em></p>
                             </div>
                         </li>
                         <li class="feature-item">
@@ -225,8 +225,8 @@
                                 <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="second one">
                             </div>
                             <div class="right-content">
-                                <h4>John Doe</h4>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                                <h4>Danu</h4>
+                                <p><em>"Vincent Motor memberikan kemudahan, dalam melakukan servis. tak perlu pergi ke bengkel mekanik bisa datang ke rumah. "</em></p>
                             </div>
                         </li>
                     </ul>
@@ -235,20 +235,19 @@
                     <ul class="features-items">
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="{{asset('template')}}//user/assets/images/features-first-icon.png" alt="fourth muscle">
+                                <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="fourth muscle">
                             </div>
                             <div class="right-content">
-                                <h4>John Doe</h4>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                                <h4>Budiman</h4>
+                                <p><em>"Barang-barang disini sangat sesuai dengan dompet namun berkualitas, pelayanannya juga ramah. Wajib dicoba jika ada di Duri!"</em></p>
                             </div>
-                        </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="{{asset('template')}}//user/assets/images/features-first-icon.png" alt="training fifth">
+                                <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="second one">
                             </div>
                             <div class="right-content">
-                                <h4>John Doe</h4>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta numquam maxime voluptatibus, impedit sed! Necessitatibus repellendus sed deleniti id et!"</em></p>
+                                <h4>Putri</h4>
+                                <p><em>"Jasa servisnya bagus dan tidak terlalu mahal, sangat cocok untuk para pelajar. Hanya pemasangan sparepart juga masih dalam batas wajar harga jasanya"</em></p>
                             </div>
                         </li>
                     </ul>
@@ -258,7 +257,7 @@
             <br>
 
             <div class="main-button text-center">
-                <a href="testimonials.html">Read More</a>
+                <a href="testimoni">Read More</a>
             </div>
         </div>
     </section>

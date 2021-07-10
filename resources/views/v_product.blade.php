@@ -47,17 +47,17 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="/">Beranda</a></li>
-                            <li><a href="product" class="active">Produk</a></li>
+                            <li><a href="produk" class="active">Produk</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tentang</a>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about">Tentang Kami</a>
-                                    <a class="dropdown-item" href="team.html">Tim</a>
-                                    <a class="dropdown-item" href="testimonials.html">Testimoni</a>
+                                    <a class="dropdown-item" href="tentang">Tentang Kami</a>
+                                    <a class="dropdown-item" href="tim">Tim</a>
+                                    <a class="dropdown-item" href="testimoni">Testimoni</a>
                                 </div>
                             </li>
-                            <li><a href="contact">Kontak</a></li>
+                            <li><a href="kontak">Kontak</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -111,7 +111,7 @@
 
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Make:</label>
+                                <label>Merek:</label>
 
                                 <select>
                                     <option value="">-- All --</option>
@@ -127,7 +127,7 @@
 
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Model:</label>
+                                <label>Harga:</label>
 
                                 <select>
                                     <option value="">-- All --</option>
@@ -140,59 +140,7 @@
 
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Price:</label>
-
-                                <select>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Mileage:</label>
-
-                                <select>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Engine size:</label>
-
-                                <select>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Fuel:</label>
-
-                                <select>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                    <option value="">-- All --</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Gearbox:</label>
+                                <label>Kategori produk:</label>
 
                                 <select>
                                     <option value="">-- All --</option>
@@ -205,7 +153,7 @@
 
                         <div class="col-sm-4 offset-sm-4">
                             <div class="main-button text-center">
-                                <a href="#">Search</a>
+                                <a href="#">Cari</a>
                             </div>
                         </div>
                         <br>

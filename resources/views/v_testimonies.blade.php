@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Tentang kami</title>
+    <title>Vincent Motor</title>
 
     <link rel="stylesheet" type="text/css" href="{{asset('template')}}/user/assets/css/bootstrap.min.css">
 
@@ -52,13 +52,12 @@
                                 <a class="dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tentang</a>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item active" href="tentang">Tentang kami</a>
+                                    <a class="dropdown-item" href="tentang">Tentang kita</a>
                                     <a class="dropdown-item" href="tim">Tim</a>
-                                    <a class="dropdown-item" href="testimoni">Testimoni</a>
+                                    <a class="dropdown-item active" href="testimoni">Testimoni</a>
                                 </div>
                             </li>
                             <li><a href="kontak">Kontak</a></li>
-                            <li><a href="masuk">Masuk</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -78,63 +77,68 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2>Tentang <em>kami</em></h2>
+                        <h2><em>Testimoni</em> toko kami</h2>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ***** Our Classes Start ***** -->
-    <section class="section" id="our-classes">
+    <!-- ***** Testimonials Item Start ***** -->
+    <section class="section" id="features">
         <div class="container">
             <br>
             <br>
             <br>
-            <div class="row" id="tabs">
-                <div class="col-lg-4">
-                    <ul>
-
-                        <li><a href='#tabs-2'><i class="fa fa-briefcase"></i> Our Work</a></a></li>
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="First One">
+                            </div>
+                            <div class="right-content">
+                                <h4>Ratna</h4>
+                                <p><em>"Pelayanan Vincent Motor itu sangat profesional dan memuaskan. Mekanik langsung dari bengkel resmi dan kita dapat konsultasi dengan gratis."</em></p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="second one">
+                            </div>
+                            <div class="right-content">
+                                <h4>Danu</h4>
+                                <p><em>"Vincent Motor memberikan kemudahan, dalam melakukan servis. tak perlu pergi ke bengkel mekanik bisa datang ke rumah. "</em></p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-8">
-                    <section class='tabs-content'>
-
-                        <article id='tabs-2'>
-                            <img src="{{asset('template')}}/user/assets/images/about-image-2-940x460.jpg" alt="">
-                            <h4>Pekerjaan Kami</h4>
-                            <h5>Menyediakan jasa servis motor berkualitas</h5>
-                            <p>Untuk mendapatkan layanan servis kendaraan, maka anda dapat langsung menghubungi kami pada halaman kontak dan memesan
-                                jadwal servis yang diinginkan. Pemesanan jadwal dapat dipilih dari pergi ke tempat servis langsung atau tim kami akan ke tempat anda untuk melakukan layanan</p>
-                            <h5>Produk kendaraan yang terjangkau</h5>
-                            <p>Semua produk yang dijual merupakan produk berkualitas dari setiap supplier dengan harga yang merakyat namun
-                                kualitas tidak sembarangan</p>
-                        </article>
-                    </section>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="fourth muscle">
+                            </div>
+                            <div class="right-content">
+                                <h4>Budiman</h4>
+                                <p><em>"Barang-barang disini sangat sesuai dengan dompet namun berkualitas, pelayanannya juga ramah. Wajib dicoba jika ada di Duri!"</em></p>
+                            </div>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{asset('template')}}/user/assets/images/features-first-icon.png" alt="second one">
+                            </div>
+                            <div class="right-content">
+                                <h4>Putri</h4>
+                                <p><em>"Jasa servisnya bagus dan tidak terlalu mahal, sangat cocok untuk para pelajar. Hanya pemasangan sparepart juga masih dalam batas wajar harga jasanya"</em></p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ***** Our Classes End ***** -->
-
-    <!-- ***** Call to Action Start ***** -->
-    <section class="section section-bg" id="call-to-action" style="background-image: url(template/user/assets/images/brochures.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="cta-content">
-                        <h2>Hubungi <em>kami</em></h2>
-                        <p>Pesan jadwal pickup atau jadwal order servis dan barang.</p>
-                        <div class="main-button">
-                            <a href="contact">Hubungi kami</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Call to Action End ***** -->
+    <!-- ***** Testimonials Item End ***** -->
 
     <!-- ***** Footer Start ***** -->
     <footer>
@@ -143,7 +147,6 @@
                 <div class="col-lg-12">
                     <p>
                         Copyright © 2021 Vincent Motor
-
                     </p>
                 </div>
             </div>

@@ -21,8 +21,20 @@ Route::get('/produk', function () {
     return view('v_product');
 });
 
+Route::get('/detail_produk', function () {
+    return view('v_product');
+});
+
 Route::get('/tentang', function () {
     return view('v_about');
+});
+
+Route::get('/tim', function () {
+    return view('v_team');
+});
+
+Route::get('/testimoni', function () {
+    return view('v_testimonies');
 });
 
 Route::get('/kontak', function () {
