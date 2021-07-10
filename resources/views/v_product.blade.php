@@ -58,6 +58,7 @@
                                 </div>
                             </li>
                             <li><a href="kontak">Kontak</a></li>
+                            <li><a href="masuk">Masuk</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
