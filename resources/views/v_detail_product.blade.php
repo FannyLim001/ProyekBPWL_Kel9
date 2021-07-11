@@ -140,23 +140,36 @@
                                 <div class="col-sm-6">
                                     <label>Nama Produk</label>
 
-                                    <p>Used vehicle</p>
+                                    <p>
+                                        @foreach($barang as $b)
+                                        {{$b->nama_barang}}
+                                        @endforeach
+                                    </p>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label>Merek</label>
 
-                                    <p>Lorem ipsum dolor sit</p>
+                                    <p>@foreach($barang as $b)
+                                        {{$b->merk_barang}}
+                                        @endforeach
+                                    </p>
                                 </div>
                                 <div class="col-sm-6">
                                     <label>Stok Produk</label>
 
-                                    <p>Black</p>
+                                    <p>@foreach($barang as $b)
+                                        {{$b->stok_barang}}
+                                        @endforeach
+                                    </p>
                                 </div>
                                 <div class="col-sm-6">
                                     <label>Kategori Produk</label>
 
-                                    <p>Black</p>
+                                    <p>@foreach($barang as $b)
+                                        {{$b->kategori_barang}}
+                                        @endforeach
+                                    </p>
                                 </div>
                             </div>
                         </article>

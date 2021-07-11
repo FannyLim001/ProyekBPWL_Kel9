@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ Route::get('/produk', function () {
     return view('v_product');
 });
 
-Route::get('/detail_produk', 'DetailProdukController@index');
+Route::get('/detail_produk', [ProdukController::class, 'index']);
 
 Route::get('/tentang', function () {
     return view('v_about');
