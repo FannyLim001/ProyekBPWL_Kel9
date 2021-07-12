@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Jul 2021 pada 03.49
+-- Waktu pembuatan: 12 Jul 2021 pada 04.06
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -120,13 +120,17 @@ ALTER TABLE `member`
 -- Indeks untuk tabel `pembelian`
 --
 ALTER TABLE `pembelian`
-  ADD PRIMARY KEY (`id_beli`);
+  ADD PRIMARY KEY (`id_beli`),
+  ADD KEY `fk_id_barang_supplier` (`id_barang`),
+  ADD KEY `fk_id_supplier` (`id_supplier`);
 
 --
 -- Indeks untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  ADD PRIMARY KEY (`id_jual`);
+  ADD PRIMARY KEY (`id_jual`),
+  ADD KEY `fk_id_member` (`id_member`),
+  ADD KEY `fk_id_barang` (`id_barang`);
 
 --
 -- Indeks untuk tabel `supplier`
@@ -167,6 +171,24 @@ ALTER TABLE `penjualan`
 --
 ALTER TABLE `supplier`
   MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `pembelian`
+--
+ALTER TABLE `pembelian`
+  ADD CONSTRAINT `fk_id_barang_supplier` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_id_supplier` FOREIGN KEY (`id_supplier`) REFERENCES `supplier` (`id_supplier`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `penjualan`
+--
+ALTER TABLE `penjualan`
+  ADD CONSTRAINT `fk_id_barang` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_id_member` FOREIGN KEY (`id_member`) REFERENCES `member` (`id_member`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
