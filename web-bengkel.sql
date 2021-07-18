@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
@@ -42,7 +42,17 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `merk_barang`, `harga_barang`, `stok_barang`, `kategori_barang`, `deskripsi_barang`) VALUES
-(1, 'Yamalube Matic Oil', 'Yamaha', 45000, 10, 'Oli', 'Oli ini dibuat khusus untuk mesin motor matik 4-Tak generasi pertama yang memerlukan durability mesin untuk bekerja berat sehingga performa tetap terjaga. Kelebihan dari Yamalube Matic Oil\r\n1. Menjaga mesin matic tahan lama dengan aditif anti-karat');
+(1, 'Yamalube Matic Oil', 'Yamaha', 45000, 10, 'Oli', 'Oli ini dibuat khusus untuk mesin motor matik 4-Tak generasi pertama yang memerlukan durability mesin untuk bekerja berat sehingga performa tetap terjaga. Kelebihan dari Yamalube Matic Oil\r\n1. Menjaga mesin matic tahan lama dengan aditif anti-karat'),
+(2, 'GENZI TL', 'FDR', 235000, 10, 'Ban', 'Komponen ban dirancang khusus untuk punya daya cengkeram maksimal untuk penggunaan harian\r\nCocok untuk penggunaan di jalan beraspal'),
+(3, 'Aspira Disc pad Yamaha Mio 2004-2008', 'Aspira', 30000, 10, 'Kampas Rem', 'Berfungsi untuk mencekram disc (cakram) sehingga tercipta pengurangan kecepatan\r\nBerkualitas dan bermutu tinggi\r\nPemakaian lebih awet'),
+(4, 'Yuasa YTZ5S', 'Yuasa', 200000, 12, 'Aki Motor', 'kualitasnya yang baik, aki ini juga dibanderol dengan harga yang cukup terjangkau.'),
+(5, 'Furukawa Battery FTZ5S', 'Furukawa Battery', 210000, 14, 'Aki Motor', 'Aki ini terbuat dari timah murni dan sudah disematkan teknologi anti-explode\r\nDengan tegangan sebesar 12 V dan kapasitas 3.5 Ah, Furukawa Battery FTZ5S biasa digunakan pada motor bebek dan skutik'),
+(6, 'DID 428H-DS', 'DID', 370000, 8, 'Rantai Motor', 'Rantai ini memiliki kualitas yang bagus dan juga pemasangannya dapat dikatakan mudah\r\nDID juga memiliki rantai yang berwarna emas dan dapat menjadi pilihan Anda'),
+(7, 'GR428SB', 'SSS', 120000, 9, 'Rantai Motor', 'Ranti motor merk ini memiliki banyak ukuran dan juga sudah dikenal sebagai rantai yang tahan lama dan bagus.'),
+(8, 'RTD LED H6 M11G 2 Sisi', 'RTD', 52000, 24, 'Lampu LED Motor', 'Lampu RTD satu ini memiliki spesifikasi yang sangat bagus dan Tipe ini memiliki spesifikasi yang mendukung lampu dekat dan jauh serta dapat hidup dengan arus DC-18 Watt dan menggunakan tipe pemasangan PNP.'),
+(9, 'Osram LED T19 M5 K1', 'Osram', 59000, 16, 'Lampu LED Motor', 'Osram LED T19 M5 K1 tawarkan adalah lampu LED dengan 12 V, 5/6 W, low beam-nya 5W dan untuk Hi’ nya 6W. Lampu ini juga hemat energi meski menghasilkan energi warna yang mencapai 6000 Kelvin.'),
+(10, 'TDR TWIN IRIDIUM', 'TDR', 120000, 6, 'Busi Motor', 'Sesuai tipenya (twin iridium), busi ini mengusung 2 bagian material iridium. Yaitu pada CE dan GE, dengan tujuan supaya hantaran arus listrik dari CE ke Ge lebih baik dan kuat. Sehingga pembakaran jadi makin sempurna. CE-nya mengusung diameter 0,7 mm.'),
+(11, 'DENSO IRIDIUM POWER', 'DENSO', 89000, 9, 'Busi Motor', 'Busi ini mengusung material iridium di bagian center electroda (CE). Dengan diameter CE terkecil dibanding kompetitornya, yakni 0,4 mm.');
 
 -- --------------------------------------------------------
 
@@ -143,35 +153,6 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- Indeks untuk tabel `member`
---
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`id_member`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- Indeks untuk tabel `pembelian`
---
-ALTER TABLE `pembelian`
-  ADD PRIMARY KEY (`id_beli`),
-  ADD KEY `fk_id_barang_supplier` (`id_barang`),
-  ADD KEY `fk_id_supplier` (`id_supplier`);
-
---
--- Indeks untuk tabel `penjualan`
---
-ALTER TABLE `penjualan`
-  ADD PRIMARY KEY (`id_jual`),
-  ADD KEY `fk_id_member` (`id_member`),
-  ADD KEY `fk_id_barang` (`id_barang`);
-
---
--- Indeks untuk tabel `supplier`
---
-ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`id_supplier`);
-
---
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -222,6 +203,9 @@ ALTER TABLE `pembelian`
 ALTER TABLE `penjualan`
   ADD CONSTRAINT `fk_id_barang` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_id_member` FOREIGN KEY (`id_member`) REFERENCES `member` (`id_member`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
