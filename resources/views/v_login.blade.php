@@ -68,7 +68,7 @@
                     </div>
                     <!-- /.col -->
                     <p class="mb-0">
-                        <a href="register" class="text-center" style="color: #232d39;">Buat akun</a>
+                        <a href="daftar" class="text-center" style="color: #232d39;">Buat akun</a>
                     </p>
             </div>
         </div>

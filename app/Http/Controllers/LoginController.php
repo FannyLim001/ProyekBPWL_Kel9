@@ -15,4 +15,22 @@ class LoginController extends Controller
         }
         return redirect('masuk');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
+    public function registrasi(Request $request)
+    {
+        // dd($request->all());
+        User::create([
+            'name' => $request->name,
+            'level' => 'member',
+            'email' => $request->email,
+            'password' => $request->password,
+            'remember_token' => Str::random(60),
+        ]);
+    }
 }

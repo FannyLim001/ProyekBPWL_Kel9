@@ -43,14 +43,26 @@ Route::get('/kontak', function () {
 
 Route::get('/masuk', function () {
     return view('v_login');
-});
+})->name('login');
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/daftar', function () {
     return view('v_register');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin\v_dashboard');
+Route::post('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
+
+Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
+    Route::get('/dashboard', function () {
+        return view('admin\v_dashboard');
+    });
+});
+
+Route::group(['middleware' => ['auth', 'ceklevel:admin,user']], function () {
+    Route::get('/home', function () {
+        return view('member\v_member_home');
+    });
 });
