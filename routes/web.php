@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -59,9 +60,10 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/dashboard', function () {
         return view('admin\v_dashboard');
     });
+    Route::get('/barang', [BarangController::class, 'index']);
 });
 
-Route::group(['middleware' => ['auth', 'ceklevel:admin,user']], function () {
+Route::group(['middleware' => ['auth', 'ceklevel:admin, member']], function () {
     Route::get('/home', function () {
         return view('member\v_member_home');
     });

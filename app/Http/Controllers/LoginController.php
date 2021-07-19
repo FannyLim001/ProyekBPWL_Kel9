@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\User;
+use illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -29,8 +31,10 @@ class LoginController extends Controller
             'name' => $request->name,
             'level' => 'member',
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
         ]);
+
+        return view('member/v_member_home');
     }
 }
