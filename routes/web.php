@@ -61,6 +61,8 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
         return view('admin\v_dashboard');
     });
     Route::get('/barang', [BarangController::class, 'index']);
+    Route::get('/barang/add', [BarangController::class, 'add']);
+    Route::post('/barang/insert', [BarangController::class, 'insert']);
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin, member']], function () {

@@ -12,4 +12,9 @@ class BarangModel extends Model
     {
         return DB::table('barang')->get();
     }
+
+    public function addData($data)
+    {
+        DB::table('barang')->insert($data);
+    }
 }

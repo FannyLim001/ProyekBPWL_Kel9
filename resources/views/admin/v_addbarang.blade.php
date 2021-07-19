@@ -139,7 +139,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/data.html" class="nav-link active">
+                                    <a href="/barang" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Barang</p>
                                     </a>
@@ -191,7 +191,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active">Tambah Barang</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -200,70 +200,61 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Tabel Barang &nbsp; <a href="/barang/add" class="btn btn-sm btn-primary">Tambah</a></h3>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- form start -->
+                        <form action="/barang/insert" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Nama Barang</label>
+                                        <input type="text" class="form-control" name="nama" placeholder="Nama Barang">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Merk Barang</label>
+                                        <input type="text" class="form-control" name="merk" placeholder="Merk Barang">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Harga Barang</label>
+                                        <input type="text" class="form-control" name="harga" placeholder="Harga Barang">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Stok Barang</label>
+                                        <input type="text" class="form-control" name="stok" placeholder="Stok Barang">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kategori Barang</label>
+                                        <input type="text" class="form-control" name="kategori" placeholder="Kategori Barang">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Deskripsi Barang</label>
+                                        <textarea class="form-control" name="deskripsi" placeholder="Deskripsi Barang"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Upload Gambar Barang</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input">
+                                        <label class="custom-file-label">Choose file</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <table id="example1" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Barang</th>
-                                <th>Nama Barang</th>
-                                <th>Merk Barang</th>
-                                <th>Harga Barang</th>
-                                <th>Stok Barang</th>
-                                <th>Kategori Barang</th>
-                                <th>Deskripsi Barang</th>
-                                <th>Gambar Barang</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($barang as $data)
-                            <tr>
-                                <td>{{ $data->id_barang }}</td>
-                                <td>{{ $data->nama_barang }}</td>
-                                <td>{{ $data->merk_barang }}</td>
-                                <td>{{ $data->harga_barang }}</td>
-                                <td>{{ $data->stok_barang }}</td>
-                                <td>{{ $data->kategori_barang }}</td>
-                                <td>{{ $data->deskripsi_barang }}</td>
-                                <td><img src="foto_barang/{{ $data->gambar }}" width="150px" alt="foto barang"></td>
-                                <td>
-                                    <a href="edit_barang" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="hapus_barang" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>ID Barang</th>
-                                <th>Nama Barang</th>
-                                <th>Merk Barang</th>
-                                <th>Harga Barang</th>
-                                <th>Stok Barang</th>
-                                <th>Kategori Barang</th>
-                                <th>Deskripsi Barang</th>
-                                <th>Gambar Barang</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+                </form>
         </div>
-        <!-- /.col -->
-    </div>
-    <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+        </section>
+        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
