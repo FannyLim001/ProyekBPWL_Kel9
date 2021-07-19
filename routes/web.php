@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,10 +45,12 @@ Route::get('/masuk', function () {
     return view('v_login');
 });
 
+Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
+
 Route::get('/daftar', function () {
     return view('v_register');
 });
 
 Route::get('/dashboard', function () {
-    return view('v_dashboard');
+    return view('admin\v_dashboard');
 });
