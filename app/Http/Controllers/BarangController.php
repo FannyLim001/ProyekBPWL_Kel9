@@ -26,31 +26,32 @@ class BarangController extends Controller
         return view('admin/v_addbarang');
     }
 
-    public function insert()
+    public function store(Request $request)
     {
-        Request()->validate([
-            'nama_barang' => 'required|unique:barang, nama_barang',
-            'merk_barang' => 'required',
-            'harga_barang' => 'required',
-            'stok_barang' => 'required',
-            'kategori_barang' => 'required',
-            'deskripsi_barang' => 'required',
-            'gambar' => 'required|mimes:jpg,jpeg,png',
+        $this->validate($request, [
+            'foto_barang' => 'required|mimes:jpeg,png,jpg',
         ]);
 
-        $file = Request()->foto_barang;
-        $filename = Request()->$file->getClientOriginalName();
-        $file->move(public_path('foto_barang'), $filename);
+        // menyimpan data file yang diupload ke variabel $file
+        $gambar = $request->file('foto_barang');
 
+        $nama_gambar = $gambar->getClientOriginalName();
+
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'foto_barang';
+        $gambar->move($tujuan_upload, $nama_gambar);
+
+        // insert data ke table pegawai
         DB::table('barang')->insert([
-            'nama_barang' => Request()->nama,
-            'merk_barang' => Request()->merk,
-            'harga_barang' => Request()->harga,
-            'stok_barang' => Request()->stok,
-            'kategori_barang' => Request()->kategori,
-            'deskripsi_barang' => Request()->deskripsi,
-            'gambar' => $filename
+            'nama_barang' => $request->nama,
+            'merk_barang' => $request->merk,
+            'harga_barang' => $request->harga,
+            'stok_barang' => $request->stok,
+            'kategori_barang' => $request->kategori,
+            'deskripsi_barang' => $request->deskripsi,
+            'gambar' => $nama_gambar
         ]);
+        // alihkan halaman ke halaman pegawai
         return redirect('barang')->with('pesan', 'Data berhasil ditambahkan!');
     }
 }

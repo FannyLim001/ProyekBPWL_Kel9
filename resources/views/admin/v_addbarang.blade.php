@@ -204,7 +204,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- form start -->
-                        <form action="/barang/insert" method="post" enctype="multipart/form-data">
+                        <form action="/barang/store" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col">
