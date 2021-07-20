@@ -133,7 +133,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/member" class="nav-link">
+                                    <a href="/member" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
@@ -145,7 +145,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/supplier" class="nav-link active">
+                                    <a href="/supplier" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Supplier</p>
                                     </a>

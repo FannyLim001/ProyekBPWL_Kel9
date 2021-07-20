@@ -55,7 +55,7 @@ class MemberController extends Controller
     {
         // update data pegawai
         DB::table('member')->where('id_member', $request->id)->update([
-            'nama_member' => $request->nama,\
+            'nama_member' => $request->nama,
             'email' => $request->email,
             'password' => $request->password,
         ]);

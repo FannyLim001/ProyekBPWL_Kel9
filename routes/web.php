@@ -100,8 +100,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/penjualan/hapus/{id}', [PenjualanController::class, 'hapus']);
 });
 
-Route::group(['middleware' => ['auth', 'ceklevel:admin, member']], function () {
-    Route::get('/home', function () {
-        return view('member\v_member_home');
-    });
+Route::get('/home', function () {
+    return view('member/v_member_home');
 });

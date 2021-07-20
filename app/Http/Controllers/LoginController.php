@@ -2,24 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Auth;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use illuminate\Support\Str;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
     public function postlogin(Request $request)
     {
-        // dd($request->all());
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('dashboard');
+            if (Auth::user()->level == "admin") {
+                return redirect('/dashboard');
+            } else if (Auth::user()->level == "member") {
+                return redirect('/home');
+            }
+            return redirect('masuk');
         }
-        return redirect('masuk');
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
         Auth::logout();
         return redirect('/');
@@ -27,9 +30,8 @@ class LoginController extends Controller
 
     public function registrasi(Request $request)
     {
-        // dd($request->all());
         User::create([
-            'name' => $request->name,
+            'name' => $request->nama,
             'level' => 'member',
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -41,7 +43,6 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ]);
-
         return view('member/v_member_home');
     }
 }

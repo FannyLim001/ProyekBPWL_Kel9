@@ -29,7 +29,7 @@
                 <form action="{{route('registrasi')}}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="name" placeholder="Nama">
+                        <input type="text" class="form-control" name="nama" placeholder="Nama">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>

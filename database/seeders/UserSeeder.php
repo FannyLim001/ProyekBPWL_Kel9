@@ -16,12 +16,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::truncate();
-        User::create([
-            'name' => 'Admin',
-            'level' => 'admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('admin'),
-            'remember_token' => Str::random(60),
-        ]);
+        User::create(
+            [
+                'name' => 'Admin',
+                'level' => 'admin',
+                'email' => 'admin@admin.com',
+                'password' => bcrypt('admin'),
+                'remember_token' => Str::random(60),
+            ]
+        );
     }
 }

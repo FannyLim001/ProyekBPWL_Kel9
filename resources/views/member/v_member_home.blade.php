@@ -58,6 +58,7 @@
                                 </div>
                             </li>
                             <li><a href="kontak">Kontak</a></li>
+                            <li><a href="/dashboard">Dashboard</a></li>
                             <li><a href="{{route('logout')}}">Logout</a></li>
                         </ul>
                         <a class='menu-trigger'>

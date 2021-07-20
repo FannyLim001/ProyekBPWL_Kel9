@@ -139,13 +139,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/barang" class="nav-link">
+                                    <a href="/barang" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Barang</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/supplier" class="nav-link active">
+                                    <a href="/supplier" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Supplier</p>
                                     </a>
