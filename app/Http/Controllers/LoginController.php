@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use illuminate\Support\Str;
 
 class LoginController extends Controller
@@ -33,6 +34,12 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
+        ]);
+
+        DB::table('member')->insert([
+            'nama_member' => $request->nama,
+            'email' => $request->email,
+            'password' => $request->password
         ]);
 
         return view('member/v_member_home');

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class MemberController extends Controller
 {
@@ -24,10 +26,16 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
+        User::create([
+            'name' => $request->nama,
+            'level' => 'member',
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(60)
+        ]);
         // insert data ke table pegawai
         DB::table('member')->insert([
             'nama_member' => $request->nama,
-            'username' => $request->username,
             'email' => $request->email,
             'password' => $request->password
         ]);
@@ -47,8 +55,7 @@ class MemberController extends Controller
     {
         // update data pegawai
         DB::table('member')->where('id_member', $request->id)->update([
-            'nama_member' => $request->nama,
-            'username' => $request->username,
+            'nama_member' => $request->nama,\
             'email' => $request->email,
             'password' => $request->password,
         ]);

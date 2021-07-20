@@ -44,7 +44,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="home" class="nav-link">Home</a>
+                    <a href="/home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -91,7 +91,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="home" class="brand-link">
+            <a href="/home" class="brand-link">
                 <img src="{{asset('template')}}/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Vincent Motor</span>
             </a>
@@ -133,31 +133,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="member" class="nav-link active">
+                                    <a href="/member" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="barang" class="nav-link">
+                                    <a href="/barang" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Barang</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="supplier" class="nav-link">
+                                    <a href="/supplier" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Supplier</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pembelian" class="nav-link">
+                                    <a href="/pembelian" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Pembelian</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="penjualan" class="nav-link">
+                                    <a href="/penjualan" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Penjualan</p>
                                     </a>
@@ -186,12 +186,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">List Member</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="home">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                                <li class="breadcrumb-item active">List Member</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -220,7 +220,6 @@
                             <tr>
                                 <th>ID Barang</th>
                                 <th>Nama Member</th>
-                                <th>Username</th>
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Aksi</th>
@@ -231,7 +230,6 @@
                             <tr>
                                 <td>{{ $data->id_member }}</td>
                                 <td>{{ $data->nama_member }}</td>
-                                <td>{{ $data->username }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->password }}</td>
                                 <td>
@@ -245,7 +243,6 @@
                             <tr>
                                 <th>ID Barang</th>
                                 <th>Nama Member</th>
-                                <th>Username</th>
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Aksi</th>
