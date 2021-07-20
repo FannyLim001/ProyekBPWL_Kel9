@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Jul 2021 pada 04.06
+-- Waktu pembuatan: 20 Jul 2021 pada 15.55
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -34,15 +34,43 @@ CREATE TABLE `barang` (
   `harga_barang` int(11) NOT NULL,
   `stok_barang` int(11) NOT NULL,
   `kategori_barang` varchar(30) NOT NULL,
-  `deskripsi_barang` varchar(255) NOT NULL
+  `deskripsi_barang` varchar(255) NOT NULL,
+  `gambar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `merk_barang`, `harga_barang`, `stok_barang`, `kategori_barang`, `deskripsi_barang`) VALUES
-(1, 'Yamalube Matic Oil', 'Yamaha', 45000, 10, 'Oli', 'Oli ini dibuat khusus untuk mesin motor matik 4-Tak generasi pertama yang memerlukan durability mesin untuk bekerja berat sehingga performa tetap terjaga. Kelebihan dari Yamalube Matic Oil\r\n1. Menjaga mesin matic tahan lama dengan aditif anti-karat');
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `merk_barang`, `harga_barang`, `stok_barang`, `kategori_barang`, `deskripsi_barang`, `gambar`) VALUES
+(1, 'Yamalube Matic Oil', 'Yamaha', 45000, 10, 'Oli', 'Oli ini dibuat khusus untuk mesin motor matik 4-Tak generasi pertama yang memerlukan durability mesin untuk bekerja berat sehingga performa tetap terjaga. Kelebihan dari Yamalube Matic Oil\r\n1. Menjaga mesin matic tahan lama dengan aditif anti-karat', 'yamalube.jpg'),
+(2, 'GENZI TL', 'FDR', 235000, 10, 'Ban', 'Komponen ban dirancang khusus untuk punya daya cengkeram maksimal untuk penggunaan harian\r\nCocok untuk penggunaan di jalan beraspal', 'genzi.jpg'),
+(3, 'Aspira Disc pad Yamaha Mio 2004-2008', 'Aspira', 30000, 10, 'Kampas Rem', 'Berfungsi untuk mencekram disc (cakram) sehingga tercipta pengurangan kecepatan\r\nBerkualitas dan bermutu tinggi\r\nPemakaian lebih awet', 'aspira.jpg'),
+(4, 'Yuasa YTZ5S', 'Yuasa', 200000, 12, 'Aki Motor', 'kualitasnya yang baik, aki ini juga dibanderol dengan harga yang cukup terjangkau.', 'yuasa.jpg'),
+(5, 'Furukawa Battery FTZ5S', 'Furukawa Battery', 210000, 14, 'Aki Motor', 'Aki ini terbuat dari timah murni dan sudah disematkan teknologi anti-explode\r\nDengan tegangan sebesar 12 V dan kapasitas 3.5 Ah, Furukawa Battery FTZ5S biasa digunakan pada motor bebek dan skutik', 'furukawa.jpg'),
+(6, 'DID 428H-DS', 'DID', 370000, 8, 'Rantai Motor', 'Rantai ini memiliki kualitas yang bagus dan juga pemasangannya dapat dikatakan mudah\r\nDID juga memiliki rantai yang berwarna emas dan dapat menjadi pilihan Anda', 'did.jpg'),
+(7, 'GR428SB', 'SSS', 120000, 9, 'Rantai Motor', 'Ranti motor merk ini memiliki banyak ukuran dan juga sudah dikenal sebagai rantai yang tahan lama dan bagus.', 'gr4.jpg'),
+(8, 'RTD LED H6 M11G 2 Sisi', 'RTD', 52000, 24, 'Lampu LED Motor', 'Lampu RTD satu ini memiliki spesifikasi yang sangat bagus dan Tipe ini memiliki spesifikasi yang mendukung lampu dekat dan jauh serta dapat hidup dengan arus DC-18 Watt dan menggunakan tipe pemasangan PNP.', 'rtd.jpg'),
+(9, 'Osram LED T19 M5 K1', 'Osram', 59000, 16, 'Lampu LED Motor', 'Osram LED T19 M5 K1 tawarkan adalah lampu LED dengan 12 V, 5/6 W, low beam-nya 5W dan untuk Hi’ nya 6W. Lampu ini juga hemat energi meski menghasilkan energi warna yang mencapai 6000 Kelvin.', 't19.jpg'),
+(10, 'TDR TWIN IRIDIUM', 'TDR', 120000, 6, 'Busi Motor', 'Sesuai tipenya (twin iridium), busi ini mengusung 2 bagian material iridium. Yaitu pada CE dan GE, dengan tujuan supaya hantaran arus listrik dari CE ke Ge lebih baik dan kuat. Sehingga pembakaran jadi makin sempurna. CE-nya mengusung diameter 0,7 mm.', 'tdr.jpg'),
+(11, 'DENSO IRIDIUM POWER', 'DENSO', 89000, 9, 'Busi Motor', 'Busi ini mengusung material iridium di bagian center electroda (CE). Dengan diameter CE terkecil dibanding kompetitornya, yakni 0,4 mm.', 'denso.jpg'),
+(12, 'Ban Swallow 60/90-14 Stream SP', 'Swallow', 103000, 7, 'Ban', 'Ban Swallow 60/90-14 Stream SP Bukan Tubeless Ban Motor adalah ban motor tubetype berukuran 60/90-14 yang cocok digunakan saat kondisi kering maupun basah.', 'ban_swallow.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -53,10 +81,60 @@ INSERT INTO `barang` (`id_barang`, `nama_barang`, `merk_barang`, `harga_barang`,
 CREATE TABLE `member` (
   `id_member` int(11) NOT NULL,
   `nama_member` varchar(50) NOT NULL,
-  `username` varchar(25) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `member`
+--
+
+INSERT INTO `member` (`id_member`, `nama_member`, `email`, `password`) VALUES
+(1, 'Rey', 'rey22@gmail.com', 'rey2222'),
+(2, 'Fazil', 'Fazilhayuk@gmail.com', 'fazil1122'),
+(3, 'Kunglao', 'Kunglao11@gmail.com', 'kunglao11'),
+(4, 'Yuri ', 'Yuriii@gmail.com', 'yurii1212'),
+(5, 'Toni', 'ToniRe@gmail.com', 'toniiiy'),
+(6, 'Renaldo', 'Renaldow@gmail.com', 'renaldooo12'),
+(7, 'Ucok', 'Uucok@gmail.com', 'ucok12'),
+(8, 'Akbar', 'Akbarz@gmail.com', 'akbar2121'),
+(9, 'Fani', 'Faniiy@gmail.com', 'fani21'),
+(10, 'Pami', 'Pamii@gmail.com', 'pamii20'),
+(17, 'Kiana', 'kiana@gmail.com', 'kiana76'),
+(19, 'Siesta', 'siesta@gmail.com', 'siesta98');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -72,6 +150,18 @@ CREATE TABLE `pembelian` (
   `jml_beli` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `pembelian`
+--
+
+INSERT INTO `pembelian` (`id_beli`, `id_barang`, `id_supplier`, `tgl_beli`, `jml_beli`) VALUES
+(1, 3, 2, '2021-04-13', 5),
+(2, 6, 5, '2021-04-15', 3),
+(3, 2, 10, '2021-05-09', 6),
+(5, 11, 11, '2021-07-06', 12),
+(6, 10, 10, '2021-07-07', 4),
+(7, 3, 3, '2021-07-08', 6);
+
 -- --------------------------------------------------------
 
 --
@@ -85,6 +175,18 @@ CREATE TABLE `penjualan` (
   `tgl_jual` date NOT NULL,
   `jml_jual` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `penjualan`
+--
+
+INSERT INTO `penjualan` (`id_jual`, `id_barang`, `id_member`, `tgl_jual`, `jml_jual`) VALUES
+(1, 2, 9, '2021-05-04', 4),
+(2, 8, 10, '2021-06-01', 2),
+(3, 4, 1, '2021-06-03', 2),
+(4, 9, 6, '2021-06-14', 2),
+(5, 4, 3, '2021-07-01', 1),
+(6, 5, 7, '2021-07-17', 2);
 
 -- --------------------------------------------------------
 
@@ -100,6 +202,60 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data untuk tabel `supplier`
+--
+
+INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `kota_supplier`, `alamat_supplier`) VALUES
+(1, 'PT. YAMAHA', 'Pekanbaru', 'Jl. Nangka'),
+(2, 'PT. STAR PARTS', 'Bandung', 'Jl. Soekarno Hatta '),
+(3, 'PT. Calispo Jaya Abadi', 'Pekanbaru', 'Jl. Soekarno Hatta'),
+(4, 'PT. YUASA BATTERY INDONESIA', 'Banten', 'Jl.Thamrin'),
+(5, 'PT. Furukawa Indonesia', 'Karawang', 'Jl.Harapan II'),
+(6, 'PT. DAIDO INDONESIA', 'Bekasi', 'Jl. Jawa '),
+(7, 'PT. TIGA SAKTI', 'Jakarta Utara', 'Jl. Danau Sunter'),
+(8, 'PT. RAYTON INDONESIA', 'Jakarta Barat', 'Jl. Toyib'),
+(9, 'PT. OSRAM INDONESIA', 'Jakarta Pusat', 'Jl. Senen Raya'),
+(10, 'PT. TDR ', 'Jl. Swadaya IV', 'Jakarta Pusat'),
+(11, 'PT. DENSO INDONESIA', 'Bekasi', 'Jl. Kalimantan');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `level` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `level`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin', 'admin@admin.com', NULL, '$2y$10$ybfzmZcoQfvVgXtoH8zLkeFmW3nu5ioDh/RPPw8LM6qtwLKwquZQi', 'wiWT2G8BsLXgztuEjbSnHoHCTClUAYG3byPyvlo26SXSmt5NkGF2PQcn0U3L', '2021-07-19 01:49:55', '2021-07-19 01:49:55'),
+(2, 'Rey', 'member', 'rey22@gmail.com', NULL, '$2y$10$TjvKpOaj4mTLr0ZzA542kuMamHtAhhu3cezqAjjc0w3rrnEtxZIHK', NULL, '2021-07-19 02:12:00', '2021-07-19 02:12:00'),
+(4, 'Fazil', 'member', 'Fazilhayuk@gmail.com', NULL, '$2y$10$.MCyoJMGWCIUrIbjHlRHbuW6seauHTk4LctnLmfm6r.LqWUMg..kG', NULL, '2021-07-20 06:21:02', '2021-07-20 06:21:02'),
+(5, 'Kunglao', 'member', 'Kunglao11@gmail.com', NULL, '$2y$10$zohlogcWIJFBjtQEgz4FMuNd2Lp.RFvvaTsSPeIzPsPr29HpRJnQe', NULL, '2021-07-20 06:22:09', '2021-07-20 06:22:09'),
+(6, 'Yuri', 'member', 'Yuriii@gmail.com', NULL, '$2y$10$TMleAVg.2VwsRgsu/cAB/O3qrgIET4nzGcVRaTQ.vMjBHJ2i17FuO', NULL, '2021-07-20 06:23:07', '2021-07-20 06:23:07'),
+(7, 'Toni', 'member', 'ToniRe@gmail.com', NULL, '$2y$10$VyIeIllx7DVCv8a/FQByX.PVlRBGpIsOvtUobO37qKONQ82fJ.pR2', NULL, '2021-07-20 06:23:53', '2021-07-20 06:23:53'),
+(8, 'Renaldo', 'member', 'Renaldow@gmail.com', NULL, '$2y$10$uo1liByPXmnIHkC7tgGuGeGW9vITUeo0eW.LHGsfhb2lwIv4c76CW', NULL, '2021-07-20 06:24:18', '2021-07-20 06:24:18'),
+(9, 'Ucok', 'member', 'Uucok@gmail.com', NULL, '$2y$10$aPDYfzilV42IF3gU/4lVHuUws6rG.JqDN57t3zshk.Dhs/weafOpe', NULL, '2021-07-20 06:24:41', '2021-07-20 06:24:41'),
+(10, 'Akbar', 'member', 'Akbarz@gmail.com', NULL, '$2y$10$RFM0gWgw1XrIwOMNAfXZsut1PDvKgezPhWwaqGMZGnnLpacpPu7ny', NULL, '2021-07-20 06:25:02', '2021-07-20 06:25:02'),
+(11, 'Fani', 'member', 'Faniiy@gmail.com', NULL, '$2y$10$YuwgxrwBmEyTtYvJJ74f6OA1L5Vo788eC13UAzvTS1DkZZuBglb6.', NULL, '2021-07-20 06:25:23', '2021-07-20 06:25:23'),
+(12, 'Pami', 'member', 'Pamii@gmail.com', NULL, '$2y$10$faM6kPEblVeSsqPPbfuEF.TGELq6rUV5ZrtaWQBizA4MGfcjMDN.u', NULL, '2021-07-20 06:25:46', '2021-07-20 06:25:46'),
+(13, 'Kiana', 'member', 'kiana@gmail.com', NULL, '$2y$10$4Dd6yWjPQoaHiwmCjApYyutXVj1Bh60tHaLP/4V3r/W3zLdvd29.i', NULL, '2021-07-20 06:30:25', '2021-07-20 06:30:25'),
+(14, 'Siesta', 'member', 'siesta@gmail.com', NULL, '$2y$10$yxL6Fiu4eZ0kTSy6hsv1Y.ZxeFBTtGbBZHRuq57UCsRbEs2dJ//36', NULL, '2021-07-20 06:34:05', '2021-07-20 06:34:05');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -110,11 +266,30 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
+-- Indeks untuk tabel `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
 -- Indeks untuk tabel `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`id_member`),
   ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indeks untuk tabel `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Indeks untuk tabel `pembelian`
@@ -139,6 +314,13 @@ ALTER TABLE `supplier`
   ADD PRIMARY KEY (`id_supplier`);
 
 --
+-- Indeks untuk tabel `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -146,31 +328,49 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `member`
 --
 ALTER TABLE `member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT untuk tabel `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id_beli` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_beli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_jual` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT untuk tabel `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
