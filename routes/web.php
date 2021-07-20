@@ -64,6 +64,10 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/barang', [BarangController::class, 'index']);
     Route::get('/barang/add', [BarangController::class, 'add']);
     Route::post('/barang/store', [BarangController::class, 'store']);
+    Route::get('/barang/edit/{id}', [BarangController::class, 'edit']);
+    Route::post('/barang/update', [BarangController::class, 'update']);
+    Route::get('/barang/hapus/{id}', [BarangController::class, 'hapus']);
+
     Route::get('/member', [MemberController::class, 'index']);
     Route::get('/member/add', [MemberController::class, 'add']);
     Route::post('/member/store', [MemberController::class, 'store']);

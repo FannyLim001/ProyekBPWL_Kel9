@@ -133,13 +133,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="member" class="nav-link">
+                                    <a href="pages/tables/simple.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/data.html" class="nav-link active">
+                                    <a href="/barang" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Barang</p>
                                     </a>
@@ -191,7 +191,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active">Tambah Barang</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -200,79 +200,56 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Tabel Barang &nbsp;
-                        <a href="/barang/add" class="btn btn-sm btn-primary">Tambah</a>
-                        @if (session('pesan'))
-                        <div class="alert alert-success alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <h5><i class="icon fas fa-check"></i> Success!</h5>
-                            {{ session('pesan') }}
-                        </div>
-                        @endif
-                    </h3>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- form start -->
+                        @foreach ($barang as $b)
+                        <form action="/barang/update" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="hidden" name="id" value="{{ $b->id_barang }}">
+                                        <label>Nama Barang</label>
+                                        <input type="text" class="form-control" name="nama" value="{{ $b->nama_barang }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Merk Barang</label>
+                                        <input type="text" class="form-control" name="merk" value="{{ $b->merk_barang }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Harga Barang</label>
+                                        <input type="number" class="form-control" name="harga" value="{{ $b->harga_barang }}">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Stok Barang</label>
+                                        <input type="number" class="form-control" name="stok" value="{{ $b->stok_barang }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kategori Barang</label>
+                                        <input type="text" class="form-control" name="kategori" value="{{ $b->kategori_barang }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Deskripsi Barang</label>
+                                        <textarea class="form-control" name="deskripsi">{{ $b->deskripsi_barang }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Upload Gambar Barang</label>
+                                <input type="file" name="foto_barang" class="form-control">
+                            </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <table id="example1" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Barang</th>
-                                <th>Nama Barang</th>
-                                <th>Merk Barang</th>
-                                <th>Harga Barang</th>
-                                <th>Stok Barang</th>
-                                <th>Kategori Barang</th>
-                                <th>Deskripsi Barang</th>
-                                <th>Gambar Barang</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($barang as $data)
-                            <tr>
-                                <td>{{ $data->id_barang }}</td>
-                                <td>{{ $data->nama_barang }}</td>
-                                <td>{{ $data->merk_barang }}</td>
-                                <td>{{ $data->harga_barang }}</td>
-                                <td>{{ $data->stok_barang }}</td>
-                                <td>{{ $data->kategori_barang }}</td>
-                                <td>{{ $data->deskripsi_barang }}</td>
-                                <td><img src="foto_barang/{{ $data->gambar }}" width="150px" alt="foto barang"></td>
-                                <td>
-                                    <a href="/barang/edit/{{ $data-> id_barang }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="/barang/hapus/{{ $data-> id_barang }}" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>ID Barang</th>
-                                <th>Nama Barang</th>
-                                <th>Merk Barang</th>
-                                <th>Harga Barang</th>
-                                <th>Stok Barang</th>
-                                <th>Kategori Barang</th>
-                                <th>Deskripsi Barang</th>
-                                <th>Gambar Barang</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+                </form>
+                @endforeach
         </div>
-        <!-- /.col -->
-    </div>
-    <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+        </section>
+        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
