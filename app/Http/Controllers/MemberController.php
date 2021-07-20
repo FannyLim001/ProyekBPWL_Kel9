@@ -34,4 +34,25 @@ class MemberController extends Controller
         // alihkan halaman ke halaman pegawai
         return redirect('member')->with('pesan', 'Data berhasil ditambahkan!');
     }
+
+    public function edit($id)
+    {
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $member = DB::table('member')->where('id_member', $id)->get();
+        // passing data pegawai yang didapat ke view edit.blade.php
+        return view('admin/v_editmember', ['member' => $member]);
+    }
+
+    public function update(Request $request)
+    {
+        // update data pegawai
+        DB::table('member')->where('id_member', $request->id)->update([
+            'nama_member' => $request->nama,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+        // alihkan halaman ke halaman pegawai
+        return redirect('member')->with('pesan', 'Data berhasil diupdate!');
+    }
 }

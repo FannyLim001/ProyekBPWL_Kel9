@@ -67,6 +67,8 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/member', [MemberController::class, 'index']);
     Route::get('/member/add', [MemberController::class, 'add']);
     Route::post('/member/store', [MemberController::class, 'store']);
+    Route::get('/member/edit/{id}', [MemberController::class, 'edit']);
+    Route::post('/member/update', [MemberController::class, 'update']);
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin, member']], function () {

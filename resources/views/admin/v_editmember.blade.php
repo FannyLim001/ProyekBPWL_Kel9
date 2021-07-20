@@ -133,13 +133,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="member" class="nav-link active">
+                                    <a href="member" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="barang" class="nav-link">
+                                    <a href="barang" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Barang</p>
                                     </a>
@@ -190,8 +190,8 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item"><a href="home">Home</a></li>
+                                <li class="breadcrumb-item active">Edit Member</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -200,85 +200,58 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Tabel Member &nbsp;
-                        <a href="/member/add" class="btn btn-sm btn-primary">Tambah</a>
-                        @if (session('pesan'))
-                        <div class="alert alert-success alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <h5><i class="icon fas fa-check"></i> Success!</h5>
-                            {{ session('pesan') }}
-                        </div>
-                        @endif
-                    </h3>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- form start -->
+                        @foreach ($member as $m)
+                        <form action="/member/update" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="hidden" name="id" value="{{ $m->id_member }}">
+                                        <label>Nama Member</label>
+                                        <input type="text" class="form-control" name="nama" value="{{ $m->nama_member }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control" name="username" value="{{ $m->username }}">
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" name="email" value="{{ $m->email }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" class="form-control" name="password" value="{{ $m->password }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    </form>
+                    @endforeach
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <table id="example1" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Barang</th>
-                                <th>Nama Member</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($member as $data)
-                            <tr>
-                                <td>{{ $data->id_member }}</td>
-                                <td>{{ $data->nama_member }}</td>
-                                <td>{{ $data->username }}</td>
-                                <td>{{ $data->email }}</td>
-                                <td>{{ $data->password }}</td>
-                                <td>
-                                    <a href="member/edit/{{ $data-> id_member }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="member/hapus" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>ID Barang</th>
-                                <th>Nama Member</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <!-- /.card-body -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.1.0
             </div>
-            <!-- /.card -->
-        </div>
-        <!-- /.col -->
-    </div>
-    <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
