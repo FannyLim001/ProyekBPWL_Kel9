@@ -4,6 +4,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -82,6 +83,13 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit']);
     Route::post('/supplier/update', [SupplierController::class, 'update']);
     Route::get('/supplier/hapus/{id}', [SupplierController::class, 'hapus']);
+
+    Route::get('/pembelian', [PembelianController::class, 'index']);
+    Route::get('/pembelian/add', [PembelianController::class, 'add']);
+    Route::post('/pembelian/store', [PembelianController::class, 'store']);
+    Route::get('/pembelian/edit/{id}', [PembelianController::class, 'edit']);
+    Route::post('/pembelian/update', [PembelianController::class, 'update']);
+    Route::get('/pembelian/hapus/{id}', [PembelianController::class, 'hapus']);
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin, member']], function () {
