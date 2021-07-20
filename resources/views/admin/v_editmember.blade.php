@@ -44,7 +44,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="home" class="nav-link">Home</a>
+                    <a href="/home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -91,7 +91,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="home" class="brand-link">
+            <a href="/home" class="brand-link">
                 <img src="{{asset('template')}}/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Vincent Motor</span>
             </a>
@@ -124,7 +124,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Data
@@ -133,7 +133,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/member" class="nav-link">
+                                    <a href="/member" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
@@ -186,12 +186,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">Edit Member</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="home">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Edit Member</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -202,54 +202,39 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>{{ $banyak_jual }}</h3>
-                                    <p>Transaksi penjualan</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3>{{ $max }}</h3>
-                                    <p>Max Jumlah Pembelian</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>{{ $banyak_user }}</h3>
-
-                                    <p>User yang terdaftar</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
+                        <!-- form start -->
+                        @foreach ($member as $m)
+                        <form action="/member/update" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="hidden" name="id" value="{{ $m->id_member }}">
+                                        <label>Nama Member</label>
+                                        <input type="text" class="form-control" name="nama" value="{{ $m->nama_member }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control" name="username" value="{{ $m->username }}">
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" name="email" value="{{ $m->email }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" class="form-control" name="password" value="{{ $m->password }}">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    <!-- /.row -->
-                    <!-- Main row -->
-                    <div class="row">
-                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        <section class="col-lg-5 connectedSortable">
-                    </div><!-- /.container-fluid -->
+                    </form>
+                    @endforeach
+                </div>
             </section>
             <!-- /.content -->
         </div>
