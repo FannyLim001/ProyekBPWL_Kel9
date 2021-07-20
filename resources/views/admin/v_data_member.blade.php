@@ -236,7 +236,7 @@
                                 <td>{{ $data->password }}</td>
                                 <td>
                                     <a href="member/edit/{{ $data-> id_member }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="member/hapus" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="member/hapus/{{ $data-> id_member }}" class="btn btn-sm btn-danger">Hapus</a>
                                 </td>
                             </tr>
                             @endforeach

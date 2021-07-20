@@ -55,4 +55,13 @@ class MemberController extends Controller
         // alihkan halaman ke halaman pegawai
         return redirect('member')->with('pesan', 'Data berhasil diupdate!');
     }
+
+    public function hapus($id)
+    {
+        // menghapus data pegawai berdasarkan id yang dipilih
+        DB::table('member')->where('id_member', $id)->delete();
+
+        // alihkan halaman ke halaman pegawai
+        return redirect('member')->with('pesan', 'Data berhasil dihapus!');
+    }
 }
