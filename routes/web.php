@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,6 +64,9 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/barang', [BarangController::class, 'index']);
     Route::get('/barang/add', [BarangController::class, 'add']);
     Route::post('/barang/insert', [BarangController::class, 'insert']);
+    Route::get('/member', [MemberController::class, 'index']);
+    Route::get('/member/add', [MemberController::class, 'add']);
+    Route::post('/member/store', [MemberController::class, 'store']);
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin, member']], function () {

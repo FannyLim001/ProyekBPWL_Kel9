@@ -133,7 +133,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/tables/simple.html" class="nav-link">
+                                    <a href="member" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
@@ -202,7 +202,16 @@
             <!-- Main content -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tabel Barang &nbsp; <a href="/barang/add" class="btn btn-sm btn-primary">Tambah</a></h3>
+                    <h3 class="card-title">Tabel Barang &nbsp;
+                        <a href="/barang/add" class="btn btn-sm btn-primary">Tambah</a>
+                        @if (session('pesan'))
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h5><i class="icon fas fa-check"></i> Success!</h5>
+                            {{ session('pesan') }}
+                        </div>
+                        @endif
+                    </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -232,8 +241,8 @@
                                 <td>{{ $data->deskripsi_barang }}</td>
                                 <td><img src="foto_barang/{{ $data->gambar }}" width="150px" alt="foto barang"></td>
                                 <td>
-                                    <a href="edit_barang" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="hapus_barang" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="/barang/edit" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="/barang/hapus" class="btn btn-sm btn-danger">Hapus</a>
                                 </td>
                             </tr>
                             @endforeach

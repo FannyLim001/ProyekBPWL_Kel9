@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BarangModel;
+use Illuminate\Support\Facades\DB;
 
 class BarangController extends Controller
 {
@@ -34,7 +35,22 @@ class BarangController extends Controller
             'stok_barang' => 'required',
             'kategori_barang' => 'required',
             'deskripsi_barang' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'required|mimes:jpg,jpeg,png',
         ]);
+
+        $file = Request()->foto_barang;
+        $filename = Request()->$file->getClientOriginalName();
+        $file->move(public_path('foto_barang'), $filename);
+
+        DB::table('barang')->insert([
+            'nama_barang' => Request()->nama,
+            'merk_barang' => Request()->merk,
+            'harga_barang' => Request()->harga,
+            'stok_barang' => Request()->stok,
+            'kategori_barang' => Request()->kategori,
+            'deskripsi_barang' => Request()->deskripsi,
+            'gambar' => $filename
+        ]);
+        return redirect('barang')->with('pesan', 'Data berhasil ditambahkan!');
     }
 }

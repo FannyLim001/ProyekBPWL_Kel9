@@ -133,13 +133,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/tables/simple.html" class="nav-link">
+                                    <a href="member" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/barang" class="nav-link active">
+                                    <a href="barang" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Barang</p>
                                     </a>
@@ -191,7 +191,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Tambah Barang</li>
+                                <li class="breadcrumb-item active">Tambah Member</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -204,64 +204,51 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- form start -->
-                        <form action="/barang/insert" method="post" enctype="multipart/form-data">
+                        <form action="/member/store" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label>Nama Barang</label>
-                                        <input type="text" class="form-control" name="nama" placeholder="Nama Barang" required="required">
+                                        <label>Nama Member</label>
+                                        <input type="text" class="form-control" name="nama" placeholder="Nama Member" required="required">
                                     </div>
                                     <div class="form-group">
-                                        <label>Merk Barang</label>
-                                        <input type="text" class="form-control" name="merk" placeholder="Merk Barang" required="required">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control" name="username" placeholder="Username Member" required="required">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Harga Barang</label>
-                                        <input type="number" class="form-control" name="harga" placeholder="Harga Barang" required="required">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label>Stok Barang</label>
-                                        <input type="number" class="form-control" name="stok" placeholder="Stok Barang" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Kategori Barang</label>
-                                        <input type="text" class="form-control" name="kategori" placeholder="Kategori Barang" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Deskripsi Barang</label>
-                                        <textarea class="form-control" name="deskripsi" placeholder="Deskripsi Barang" required="required"></textarea>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" name="email" placeholder="Email Member" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" class="form-control" name="password" placeholder="Password Member" required="required">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Upload Gambar Barang</label>
-                                <input type="file" name="foto_barang" class="form-control" required="required">
-                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
-                </form>
+            </section>
+            <!-- /.content -->
         </div>
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0
-        </div>
-    </footer>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.1.0
+            </div>
+        </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 

@@ -133,13 +133,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/tables/simple.html" class="nav-link">
+                                    <a href="member" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Member</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/barang" class="nav-link active">
+                                    <a href="barang" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Barang</p>
                                     </a>
@@ -191,7 +191,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Tambah Barang</li>
+                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -200,53 +200,70 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- form start -->
-                        <form action="/barang/insert" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label>Nama Barang</label>
-                                        <input type="text" class="form-control" name="nama" placeholder="Nama Barang" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Merk Barang</label>
-                                        <input type="text" class="form-control" name="merk" placeholder="Merk Barang" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Harga Barang</label>
-                                        <input type="number" class="form-control" name="harga" placeholder="Harga Barang" required="required">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label>Stok Barang</label>
-                                        <input type="number" class="form-control" name="stok" placeholder="Stok Barang" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Kategori Barang</label>
-                                        <input type="text" class="form-control" name="kategori" placeholder="Kategori Barang" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Deskripsi Barang</label>
-                                        <textarea class="form-control" name="deskripsi" placeholder="Deskripsi Barang" required="required"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Upload Gambar Barang</label>
-                                <input type="file" name="foto_barang" class="form-control" required="required">
-                            </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Tabel Member &nbsp;
+                        <a href="/member/add" class="btn btn-sm btn-primary">Tambah</a>
+                        @if (session('pesan'))
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h5><i class="icon fas fa-check"></i> Success!</h5>
+                            {{ session('pesan') }}
+                        </div>
+                        @endif
+                    </h3>
                 </div>
-                </form>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID Barang</th>
+                                <th>Nama Member</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($member as $data)
+                            <tr>
+                                <td>{{ $data->id_member }}</td>
+                                <td>{{ $data->nama_member }}</td>
+                                <td>{{ $data->username }}</td>
+                                <td>{{ $data->email }}</td>
+                                <td>{{ $data->password }}</td>
+                                <td>
+                                    <a href="/member/edit" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="/member/hapus" class="btn btn-sm btn-danger">Hapus</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>ID Barang</th>
+                                <th>Nama Member</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
         </div>
-        </section>
-        <!-- /.content -->
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
