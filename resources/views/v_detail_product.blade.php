@@ -72,20 +72,19 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
-    <section class="section section-bg" id="call-to-action" style="background-image: url(template/user/assets/images/brochures.jpg)">
+    <section class="section section-bg" id="call-to-action" style="background-image: url({{URL::asset('template/user/assets/images/brochures.jpg')}})">
         <div class="container">
             <div class="row">
+                @foreach ($detail as $d)
                 <div class="col-lg-10 offset-lg-1">
                     <div class="cta-content">
                         <br>
                         <br>
                         <h2> <em> Rp.
-                                @foreach($barang as $b)
-                                {{$b->harga_barang}}
-                                @endforeach
+                                {{ $d->harga_barang }}
                             </em>
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                        <p>Buruan pesan sekarang juga melalui WA/DM toko kami!</p>
                     </div>
                 </div>
             </div>
@@ -100,32 +99,7 @@
             <br>
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{asset('template')}}/user/assets/images/car-image-1-1200x600.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{asset('template')}}/user/assets/images/car-image-1-1200x600.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{asset('template')}}/user/assets/images/car-image-1-1200x600.jpg" alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
-
             <br>
             <br>
 
@@ -146,34 +120,29 @@
                                     <label>Nama Produk</label>
 
                                     <p>
-                                        @foreach($barang as $b)
-                                        {{$b->nama_barang}}
-                                        @endforeach
+                                        {{$d->nama_barang}}
                                     </p>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label>Merek</label>
 
-                                    <p>@foreach($barang as $b)
-                                        {{$b->merk_barang}}
-                                        @endforeach
+                                    <p>
+                                        {{$d->merk_barang}}
                                     </p>
                                 </div>
                                 <div class="col-sm-6">
                                     <label>Stok Produk</label>
 
-                                    <p>@foreach($barang as $b)
-                                        {{$b->stok_barang}}
-                                        @endforeach
+                                    <p>
+                                        {{$d->stok_barang}}
                                     </p>
                                 </div>
                                 <div class="col-sm-6">
                                     <label>Kategori Produk</label>
 
-                                    <p>@foreach($barang as $b)
-                                        {{$b->kategori_barang}}
-                                        @endforeach
+                                    <p>
+                                        {{$d->kategori_barang}}
                                     </p>
                                 </div>
                             </div>
@@ -181,9 +150,7 @@
                         <article id='tabs-2'>
                             <h4>Deskripsi Produk</h4>
                             <p>
-                                @foreach($barang as $b)
-                                {{$b->deskripsi_barang}}
-                                @endforeach
+                                {{$d->deskripsi_barang}}
                             </p>
                         </article>
                     </section>
@@ -191,6 +158,7 @@
             </div>
         </div>
     </section>
+    @endforeach
     <!-- ***** Fleet Ends ***** -->
 
     <!-- ***** Footer Start ***** -->

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
@@ -20,15 +21,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('v_home');
-});
+Route::get('/', [ProdukController::class, 'home']);
 
-Route::get('/produk', function () {
-    return view('v_product');
-});
+Route::get('/produk', [ProdukController::class, 'index']);
 
-Route::get('/detail_produk', [ProdukController::class, 'index']);
+Route::get('/detail_produk/{id}', [ProdukController::class, 'detail']);
 
 Route::get('/tentang', function () {
     return view('v_about');
@@ -61,9 +58,7 @@ Route::get('/daftar', function () {
 Route::post('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
-    Route::get('/dashboard', function () {
-        return view('admin\v_dashboard');
-    });
+    Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/barang', [BarangController::class, 'index']);
     Route::get('/barang/add', [BarangController::class, 'add']);
     Route::post('/barang/store', [BarangController::class, 'store']);
@@ -100,6 +95,4 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/penjualan/hapus/{id}', [PenjualanController::class, 'hapus']);
 });
 
-Route::get('/home', function () {
-    return view('member/v_member_home');
-});
+Route::get('/home', [ProdukController::class, 'member_home']);
