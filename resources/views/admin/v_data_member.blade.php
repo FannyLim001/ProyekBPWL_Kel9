@@ -145,19 +145,19 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                                    <a href="supplier" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Supplier</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                                    <a href="pembelian" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Pembelian</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                                    <a href="penjualan" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Penjualan</p>
                                     </a>
@@ -190,7 +190,7 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="home">Home</a></li>
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->

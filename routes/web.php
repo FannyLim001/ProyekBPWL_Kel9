@@ -4,6 +4,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,6 +75,13 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/member/edit/{id}', [MemberController::class, 'edit']);
     Route::post('/member/update', [MemberController::class, 'update']);
     Route::get('/member/hapus/{id}', [MemberController::class, 'hapus']);
+
+    Route::get('/supplier', [SupplierController::class, 'index']);
+    Route::get('/supplier/add', [SupplierController::class, 'add']);
+    Route::post('/supplier/store', [SupplierController::class, 'store']);
+    Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit']);
+    Route::post('/supplier/update', [SupplierController::class, 'update']);
+    Route::get('/supplier/hapus/{id}', [SupplierController::class, 'hapus']);
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin, member']], function () {
