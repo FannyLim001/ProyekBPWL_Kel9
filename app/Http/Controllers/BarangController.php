@@ -23,7 +23,8 @@ class BarangController extends Controller
 
     public function add()
     {
-        return view('admin/barang/v_addbarang');
+        $supplier = DB::table('supplier')->select('id_supplier', 'nama_supplier')->get();
+        return view('admin/barang/v_addbarang', ['supplier' => $supplier]);
     }
 
     public function store(Request $request)
@@ -65,10 +66,15 @@ class BarangController extends Controller
 
     public function edit($id)
     {
-        // mengambil data pegawai berdasarkan id yang dipilih
-        $barang = DB::table('barang')->where('id_barang', $id)->get();
+        $barang = DB::table('barang')
+            ->join('supplier', 'barang.id_supplier', '=', 'supplier.id_supplier')
+            ->select('barang.*', 'nama_supplier')
+            ->where('id_barang', $id)
+            ->get();
+
+        $supplier = DB::table('supplier')->select('id_supplier', 'nama_supplier')->get();
         // passing data pegawai yang didapat ke view edit.blade.php
-        return view('admin/barang/v_editbarang', ['barang' => $barang]);
+        return view('admin/barang/v_editbarang', ['barang' => $barang, 'supplier' => $supplier]);
     }
 
     public function update(Request $request)

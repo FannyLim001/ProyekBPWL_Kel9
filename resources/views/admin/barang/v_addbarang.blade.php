@@ -28,42 +28,47 @@
                 <form action="/barang/store" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Nama Barang</label>
-                                <input type="text" class="form-control" name="nama" placeholder="Nama Barang" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Merk Barang</label>
-                                <input type="text" class="form-control" name="merk" placeholder="Merk Barang" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Harga Barang</label>
-                                <input type="number" class="form-control" name="harga" placeholder="Harga Barang" required="required">
-                            </div>
+                        <div class="form-group col-4">
+                            <label>Nama Barang</label>
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Barang" required="required">
                         </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Stok Barang</label>
-                                <input type="number" class="form-control" name="stok" placeholder="Stok Barang" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Kategori Barang</label>
-                                <input type="text" class="form-control" name="kategori" placeholder="Kategori Barang" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Deskripsi Barang</label>
-                                <textarea class="form-control" name="deskripsi" placeholder="Deskripsi Barang" required="required"></textarea>
-                            </div>
+                        <div class="form-group col-3">
+                            <label>Merk Barang</label>
+                            <input type="text" class="form-control" name="merk" placeholder="Merk Barang" required="required">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Upload Gambar Barang</label>
-                        <input type="file" name="foto_barang" class="form-control" required="required">
+                        <div class="form-group col-4">
+                            <label>Nama Supplier</label>
+                            <select name="supplier" class="form-control">
+                                <option value="">- Pilih -</option>
+                                @foreach ($supplier as $s)
+                                <option value="{{ $s->id_supplier }}">{{ $s->nama_supplier }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-2">
+                            <label>Harga Barang</label>
+                            <input type="number" class="form-control" name="harga" placeholder="Harga Barang" required="required">
+                        </div>
+                        <div class="form-group col-2">
+                            <label>Stok Barang</label>
+                            <input type="number" class="form-control" name="stok" placeholder="Stok Barang" required="required">
+                        </div>
+                        <div class="form-group col-3">
+                            <label>Kategori Barang</label>
+                            <input type="text" class="form-control" name="kategori" placeholder="Kategori Barang" required="required">
+                        </div>
+                        <div class="form-group col-6 row-3">
+                            <label>Deskripsi Barang</label>
+                            <textarea class="form-control" name="deskripsi" placeholder="Deskripsi Barang" required="required"></textarea>
+                        </div>
+                        <div class="form-group col-3 row-2">
+                            <label>Upload Gambar Barang</label>
+                            <input type="file" name="foto_barang" class="form-control" required="required">
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-            </form>
         </div>
     </section>
     <!-- /.content -->
