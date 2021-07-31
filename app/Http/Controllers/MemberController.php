@@ -15,13 +15,13 @@ class MemberController extends Controller
         $member = DB::table('member')->get();
 
         // mengirim data pegawai ke view index
-        return view('admin/v_data_member', ['member' => $member]);
+        return view('admin/member/v_data_member', ['member' => $member]);
     }
 
     public function add()
     {
         // memanggil view tambah
-        return view('admin/v_addmember');
+        return view('admin/member/v_addmember');
     }
 
     public function store(Request $request)
@@ -48,7 +48,7 @@ class MemberController extends Controller
         // mengambil data pegawai berdasarkan id yang dipilih
         $member = DB::table('member')->where('id_member', $id)->get();
         // passing data pegawai yang didapat ke view edit.blade.php
-        return view('admin/v_editmember', ['member' => $member]);
+        return view('admin/member/v_editmember', ['member' => $member]);
     }
 
     public function update(Request $request)

@@ -63,6 +63,7 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Akun</a>
 
                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="masuk">Masuk</a>
                                     <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                                 </div>
                             </li>

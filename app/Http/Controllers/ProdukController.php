@@ -29,12 +29,4 @@ class ProdukController extends Controller
         // mengirim data barang ke view detail_produk
         return view('v_home', ['barang' => $barang]);
     }
-
-    public function member_home()
-    {
-        $barang = DB::table('barang')->paginate(3);
-
-        // mengirim data barang ke view detail_produk
-        return view('member/v_member_home', ['barang' => $barang]);
-    }
 }

@@ -13,13 +13,13 @@ class SupplierController extends Controller
         $supplier = DB::table('supplier')->get();
 
         // mengirim data pegawai ke view index
-        return view('admin/v_data_supplier', ['supplier' => $supplier]);
+        return view('admin/supplier/v_data_supplier', ['supplier' => $supplier]);
     }
 
     public function add()
     {
         // memanggil view tambah
-        return view('admin/v_addsupplier');
+        return view('admin/supplier/v_addsupplier');
     }
 
     public function store(Request $request)
@@ -39,7 +39,7 @@ class SupplierController extends Controller
         // mengambil data pegawai berdasarkan id yang dipilih
         $supplier = DB::table('supplier')->where('id_supplier', $id)->get();
         // passing data pegawai yang didapat ke view edit.blade.php
-        return view('admin/v_editsupplier', ['supplier' => $supplier]);
+        return view('admin/supplier/v_editsupplier', ['supplier' => $supplier]);
     }
 
     public function update(Request $request)

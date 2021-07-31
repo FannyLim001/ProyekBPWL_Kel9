@@ -19,7 +19,7 @@ class PembelianController extends Controller
         $pembelian = $this->PembelianModel->allData();
 
         // mengirim data beli ke view index
-        return view('admin/v_data_pembelian', ['pembelian' => $pembelian]);
+        return view('admin/pembelian/v_data_pembelian', ['pembelian' => $pembelian]);
     }
 
     public function add()
@@ -27,7 +27,7 @@ class PembelianController extends Controller
         $barang = $this->PembelianModel->data_barang();
         $supplier = $this->PembelianModel->data_supplier();
         // memanggil view tambah
-        return view('admin/v_addpembelian', ['barang' => $barang, 'supplier' => $supplier]);
+        return view('admin/pembelian/v_addpembelian', ['barang' => $barang, 'supplier' => $supplier]);
     }
 
     public function store(Request $request)
@@ -56,7 +56,7 @@ class PembelianController extends Controller
         $barang = $this->PembelianModel->data_barang();
         $supplier = $this->PembelianModel->data_supplier();
         // passing data beli yang didapat ke view edit.blade.php
-        return view('admin/v_editpembelian', ['pembelian' => $pembelian, 'barang' => $barang, 'supplier' => $supplier]);
+        return view('admin/pembelian/v_editpembelian', ['pembelian' => $pembelian, 'barang' => $barang, 'supplier' => $supplier]);
     }
 
     public function update(Request $request)
