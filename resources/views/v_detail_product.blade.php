@@ -108,6 +108,7 @@
                     <ul>
                         <li><a href='#tabs-1'><i class="fa fa-cog"></i> Spesifikasi Produk</a></li>
                         <li><a href='#tabs-2'><i class="fa fa-info-circle"></i> Deskripsi Produk</a></li>
+                        <li><a href='#tabs-3'><i class="fa fa-plus-circle"></i> Beli Produk</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-8">
@@ -152,6 +153,30 @@
                             <p>
                                 {{$d->deskripsi_barang}}
                             </p>
+                        </article>
+                        <article id='tabs-3'>
+                            <h4>Vehicle Extras</h4>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p>ABS</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Leather seats</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Power Assisted Steering</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Electric heated seats</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>New HU and AU</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Xenon headlights</p>
+                                </div>
+                            </div>
                         </article>
                     </section>
                 </div>

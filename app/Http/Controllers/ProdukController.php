@@ -10,7 +10,7 @@ class ProdukController extends Controller
     public function index()
     {
         // mengambil data dari table barang
-        $barang = DB::table('barang')->paginate(12);
+        $barang = DB::table('barang')->get();
 
         // mengirim data barang ke view detail_produk
         return view('v_product', ['barang' => $barang]);
