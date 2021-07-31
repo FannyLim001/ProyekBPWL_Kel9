@@ -154,6 +154,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/pesan" class="nav-link">
+                                <i class="far fa-envelope"></i>
+                                <p>&nbsp;Pesan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('logout')}}" class="nav-link">
                                 <i class="fas fa-sign-out-alt"></i>
                                 <p>&nbsp;Logout</p>

@@ -73,11 +73,12 @@
             </div>
             <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="contact-form section-bg" style="background-image: url(template/user/assets/images/contact-1-720x480.jpg)">
-                    <form id="contact" action="" method="post">
+                    <form id="contact" action="/pesan/store" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
                                 <fieldset>
-                                    <input name="name" type="text" id="name" placeholder="Nama" required="">
+                                    <input name="nama" type="text" id="name" placeholder="Nama" required="">
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
@@ -87,12 +88,12 @@
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <fieldset>
-                                    <input name="subject" type="text" id="subject" placeholder="Subjek" required>
+                                    <input name="subjek" type="text" id="subject" placeholder="Subjek" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <textarea name="message" rows="6" id="message" placeholder="Pesan" required=""></textarea>
+                                    <textarea name="pesan" rows="6" id="message" placeholder="Pesan" required=""></textarea>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
