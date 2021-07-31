@@ -94,5 +94,3 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::post('/penjualan/update', [PenjualanController::class, 'update']);
     Route::get('/penjualan/hapus/{id}', [PenjualanController::class, 'hapus']);
 });
-
-Route::get('/home', [ProdukController::class, 'member_home']);
