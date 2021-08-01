@@ -47,26 +47,34 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="/">Beranda</a></li>
-                            <li><a href="produk">Produk</a></li>
+                            <li><a href="/produk">Produk</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tentang</a>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="tentang">Tentang Kami</a>
-                                    <a class="dropdown-item" href="tim">Tim</a>
-                                    <a class="dropdown-item" href="testimoni">Testimoni</a>
+                                    <a class="dropdown-item" href="/tentang">Tentang Kami</a>
+                                    <a class="dropdown-item" href="/tim">Tim</a>
+                                    <a class="dropdown-item" href="/testimoni">Testimoni</a>
                                 </div>
                             </li>
-                            <li><a href="kontak">Kontak</a></li>
+                            <li><a href="/kontak">Kontak</a></li>
+                            @if(Auth::check() && Auth::user()->level=="admin")
                             <li><a href="/dashboard">Dashboard</a></li>
+                            @endif
+                            @if(Auth::check() && Auth::user()->level=="admin" || Auth::check() && Auth::user()->level=="member")
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Akun</a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name; }}</a>
 
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="masuk">Masuk</a>
+                                    @if(Auth::check() && Auth::user()->level=="member")
+                                    <a class="dropdown-item" href="/cart">Keranjang</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                                 </div>
                             </li>
+                            @else
+                            <li><a href="/masuk">Masuk</a></li>
+                            @endif
                 </div>
                 </li>
                 </ul>

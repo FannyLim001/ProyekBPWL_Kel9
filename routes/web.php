@@ -9,6 +9,7 @@ use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ProdukController::class, 'home']);
+Route::get('/', [ProdukController::class, 'home']);;
 
 Route::get('/produk', [ProdukController::class, 'index']);
 
@@ -43,6 +44,8 @@ Route::get('/testimoni', function () {
 Route::get('/kontak', function () {
     return view('v_contact');
 });
+
+Route::get('/cart', [ProdukController::class, 'cart']);
 
 Route::get('/masuk', function () {
     return view('v_login');

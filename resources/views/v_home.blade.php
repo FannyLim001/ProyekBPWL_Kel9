@@ -48,6 +48,9 @@
                             <i class="fa fa-shopping-cart"></i> {{ $b->stok_barang }} &nbsp;&nbsp;&nbsp;
                             <i class="fa fa-cube"></i> {{ $b->kategori_barang }} &nbsp;&nbsp;&nbsp;
                         </p>
+                        <ul class="social-icons">
+                            <li><a href="/detail_produk/{{ $b-> id_barang }}">+ Lihat Produk</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

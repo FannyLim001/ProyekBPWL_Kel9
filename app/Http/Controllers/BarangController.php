@@ -46,6 +46,7 @@ class BarangController extends Controller
         DB::table('barang')->insert([
             'nama_barang' => $request->nama,
             'merk_barang' => $request->merk,
+            'id_supplier' => $request->supplier,
             'harga_barang' => $request->harga,
             'stok_barang' => $request->stok,
             'kategori_barang' => $request->kategori,
@@ -96,6 +97,7 @@ class BarangController extends Controller
         DB::table('barang')->where('id_barang', $request->id)->update([
             'nama_barang' => $request->nama,
             'merk_barang' => $request->merk,
+            'id_supplier' => $request->supplier,
             'harga_barang' => $request->harga,
             'stok_barang' => $request->stok,
             'kategori_barang' => $request->kategori,
