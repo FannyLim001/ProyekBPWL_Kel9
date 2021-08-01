@@ -124,6 +124,12 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
+                            <a href="/dashboard" class="nav-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <p>&nbsp;Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/member" class="nav-link">
                                 <i class="fas fa-users"></i>
                                 <p>&nbsp;Member</p>
@@ -224,6 +230,7 @@
     <script src="{{asset('template')}}/admin/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('template')}}/admin/dist/js/pages/dashboard.js"></script>
+    @yield('footer')
 </body>
 
 </html>
