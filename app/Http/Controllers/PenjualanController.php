@@ -17,7 +17,7 @@ class PenjualanController extends Controller
             ->get();
 
         // mengirim data pegawai ke view index
-        return view('admin/v_data_penjualan', ['penjualan' => $penjualan]);
+        return view('admin/penjualan/v_data_penjualan', ['penjualan' => $penjualan]);
     }
 
     public function add()
@@ -25,7 +25,7 @@ class PenjualanController extends Controller
         $barang = DB::table('barang')->select('id_barang', 'nama_barang')->get();
         $member = DB::table('member')->select('id_member', 'nama_member')->get();
         // memanggil view tambah
-        return view('admin/v_addpenjualan', ['barang' => $barang, 'member' => $member]);
+        return view('admin/penjualan/v_addpenjualan', ['barang' => $barang, 'member' => $member]);
     }
 
     public function store(Request $request)
@@ -54,7 +54,7 @@ class PenjualanController extends Controller
         $barang = DB::table('barang')->select('id_barang', 'nama_barang')->get();
         $member = DB::table('member')->select('id_member', 'nama_member')->get();
         // passing data pegawai yang didapat ke view edit.blade.php
-        return view('admin/v_editpenjualan', ['penjualan' => $penjualan, 'barang' => $barang, 'member' => $member]);
+        return view('admin/penjualan/v_editpenjualan', ['penjualan' => $penjualan, 'barang' => $barang, 'member' => $member]);
     }
 
     public function update(Request $request)

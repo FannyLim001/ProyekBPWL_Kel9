@@ -18,12 +18,13 @@ class BarangController extends Controller
         $data = [
             'barang' => $this->BarangModel->allData(),
         ];
-        return view('admin/v_data_barang', $data);
+        return view('admin/barang/v_data_barang', $data);
     }
 
     public function add()
     {
-        return view('admin/v_addbarang');
+        $supplier = DB::table('supplier')->select('id_supplier', 'nama_supplier')->get();
+        return view('admin/barang/v_addbarang', ['supplier' => $supplier]);
     }
 
     public function store(Request $request)
@@ -45,6 +46,7 @@ class BarangController extends Controller
         DB::table('barang')->insert([
             'nama_barang' => $request->nama,
             'merk_barang' => $request->merk,
+            'id_supplier' => $request->supplier,
             'harga_barang' => $request->harga,
             'stok_barang' => $request->stok,
             'kategori_barang' => $request->kategori,
@@ -55,12 +57,25 @@ class BarangController extends Controller
         return redirect('barang')->with('pesan', 'Data berhasil ditambahkan!');
     }
 
-    public function edit($id)
+    public function detail($id)
     {
         // mengambil data pegawai berdasarkan id yang dipilih
         $barang = DB::table('barang')->where('id_barang', $id)->get();
         // passing data pegawai yang didapat ke view edit.blade.php
-        return view('admin/v_editbarang', ['barang' => $barang]);
+        return view('admin/barang/v_detailbarang', ['barang' => $barang]);
+    }
+
+    public function edit($id)
+    {
+        $barang = DB::table('barang')
+            ->join('supplier', 'barang.id_supplier', '=', 'supplier.id_supplier')
+            ->select('barang.*', 'nama_supplier')
+            ->where('id_barang', $id)
+            ->get();
+
+        $supplier = DB::table('supplier')->select('id_supplier', 'nama_supplier')->get();
+        // passing data pegawai yang didapat ke view edit.blade.php
+        return view('admin/barang/v_editbarang', ['barang' => $barang, 'supplier' => $supplier]);
     }
 
     public function update(Request $request)
@@ -82,6 +97,7 @@ class BarangController extends Controller
         DB::table('barang')->where('id_barang', $request->id)->update([
             'nama_barang' => $request->nama,
             'merk_barang' => $request->merk,
+            'id_supplier' => $request->supplier,
             'harga_barang' => $request->harga,
             'stok_barang' => $request->stok,
             'kategori_barang' => $request->kategori,

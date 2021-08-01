@@ -7,7 +7,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\PesanController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ProdukController::class, 'home']);
+Route::get('/', [ProdukController::class, 'home']);;
 
 Route::get('/produk', [ProdukController::class, 'index']);
 
@@ -43,6 +45,8 @@ Route::get('/kontak', function () {
     return view('v_contact');
 });
 
+Route::get('/cart', [ProdukController::class, 'cart']);
+
 Route::get('/masuk', function () {
     return view('v_login');
 })->name('login');
@@ -62,6 +66,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/barang', [BarangController::class, 'index']);
     Route::get('/barang/add', [BarangController::class, 'add']);
     Route::post('/barang/store', [BarangController::class, 'store']);
+    Route::get('/barang/detail/{id}', [BarangController::class, 'detail']);
     Route::get('/barang/edit/{id}', [BarangController::class, 'edit']);
     Route::post('/barang/update', [BarangController::class, 'update']);
     Route::get('/barang/hapus/{id}', [BarangController::class, 'hapus']);
@@ -93,6 +98,8 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/penjualan/edit/{id}', [PenjualanController::class, 'edit']);
     Route::post('/penjualan/update', [PenjualanController::class, 'update']);
     Route::get('/penjualan/hapus/{id}', [PenjualanController::class, 'hapus']);
-});
 
-Route::get('/home', [ProdukController::class, 'member_home']);
+    Route::get('/pesan', [PesanController::class, 'index']);
+    Route::post('/pesan/store', [PesanController::class, 'store']);
+    Route::get('/pesan/hapus/{id}', [PesanController::class, 'hapus']);
+});

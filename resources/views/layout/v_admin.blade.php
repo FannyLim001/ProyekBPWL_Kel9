@@ -44,7 +44,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="home" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -91,7 +91,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="home" class="brand-link">
+            <a href="/" class="brand-link">
                 <img src="{{asset('template')}}/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Vincent Motor</span>
             </a>
@@ -101,7 +101,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{asset('template')}}/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{asset('template')}}/admin/dist/img/avatar_2d.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Administrator</a>
@@ -124,52 +124,51 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Data
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
+                            <a href="/dashboard" class="nav-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <p>&nbsp;Dashboard</p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/member" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Member</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/barang" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Barang</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/supplier" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Supplier</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/pembelian" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Pembelian</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/penjualan" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Penjualan</p>
-                                    </a>
-                                </li>
-                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/member" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <p>&nbsp;Member</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/barang" class="nav-link">
+                                <i class="fas fa-cogs"></i>
+                                <p>&nbsp;Barang</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/supplier" class="nav-link">
+                                <i class="fas fa-building"></i>
+                                <p>&nbsp;&nbsp;Supplier</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pembelian" class="nav-link">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>&nbsp;Pembelian</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/penjualan" class="nav-link">
+                                <i class="fas fa-shopping-basket"></i>
+                                <p>&nbsp;Penjualan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pesan" class="nav-link">
+                                <i class="far fa-envelope"></i>
+                                <p>&nbsp;Pesan</p>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('logout')}}" class="nav-link">
-                                <i class="nav-icon fas fa-sign-out-alt"></i>
-                                <p>
-                                    Logout
-                                </p>
+                                <i class="fas fa-sign-out-alt"></i>
+                                <p>&nbsp;Logout</p>
                             </a>
                         </li>
                     </ul>
@@ -179,73 +178,8 @@
             <!-- /.sidebar -->
         </aside>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Penjualan</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Tambah Transaksi Penjualan</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
+        @yield('admin_content')
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- form start -->
-                        <form action="/penjualan/store" method="post">
-                            @csrf
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label>Nama Barang</label>
-                                        <select name="barang" class="form-control">
-                                            <option value="">- Pilih -</option>
-                                            @foreach ($barang as $b)
-                                            <option value="{{ $b->id_barang }}">{{ $b->nama_barang }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nama Member</label>
-                                        <select name="member" class="form-control">
-                                            <option value="">- Pilih -</option>
-                                            @foreach ($member as $m)
-                                            <option value="{{ $m->id_member }}">{{ $m->nama_member }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label>Tanggal Jual</label>
-                                            <input type="date" class="form-control" name="tgl" placeholder="Tanggal Jual" required="required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Jumlah Jual</label>
-                                            <input type="number" class="form-control" name="jml" placeholder="Jumlah Jual" required="required">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                    </form>
-                </div>
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
             All rights reserved.
@@ -296,6 +230,7 @@
     <script src="{{asset('template')}}/admin/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('template')}}/admin/dist/js/pages/dashboard.js"></script>
+    @yield('footer')
 </body>
 
 </html>
